@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Galería de la Misa y el Acto de Grado - Madre Isabel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                50: "#FAF6E8",
+                100: "#F5ECCE",
+                300: "#E6CF82",
+                500: "#C59B27",
+                600: "#A17B16",
+                700: "#7E5D0A",
+              },
+              navy: {
+                800: "#1E293B",
+                900: "#0F172A",
+                950: "#020617",
+              },
+            },
+            fontFamily: {
+              serif: ["Cinzel", "serif"],
+              sans: ["Plus Jakarta Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Bloqueo de selección y toques */
+      * {
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+        -webkit-touch-callout: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Deshabilitar arrastrar imágenes */
+      img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
+        pointer-events: none;
+      }
+
+      /* Fondo animado suave y sutil: Blanco -> Azul Cielo / Pastel -> Blanco */
+      body {
+        background: linear-gradient(
+          -45deg,
+          #ffffff,
+          #f4f9ff,
+          #e0f2fe,
+          #ebf8ff,
+          #ffffff
+        );
+        background-size: 400% 400%;
+        animation: subtleGradient 18s ease infinite;
+        min-height: 100vh;
+      }
+
+      @keyframes subtleGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Overlay negro para protección anti-capturas */
+      #blackout-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000;
+        z-index: 9999999;
+        color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      /* Texto con gradientes */
+      .navy-gradient-text {
+        background: linear-gradient(
+          135deg,
+          #0f172a 0%,
+          #1e3a8a 50%,
+          #0284c7 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #c59b27 0%, #a17b16 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Flotación sutil de los birretes de fondo */
+      @keyframes floatCap {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(4deg);
+        }
+      }
+
+      .float-bg-icon-1 {
+        animation: floatCap 7s ease-in-out infinite;
+      }
+      .float-bg-icon-2 {
+        animation: floatCap 9s ease-in-out infinite 1.5s;
+      }
+      .float-bg-icon-3 {
+        animation: floatCap 8s ease-in-out infinite 3s;
+      }
+
+      /* Scrollbar personalizada */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0284c7;
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-navy-900 antialiased selection:bg-none min-h-full flex flex-col justify-between relative overflow-x-hidden"
+  >
+    <!-- Capa de Bloqueo Anti-Captura (Pantalla Negra) -->
+    <div id="blackout-overlay" class="p-6 transition-opacity duration-200">
+      <div
+        class="max-w-md bg-navy-950/95 border border-gold-500/30 p-8 rounded-2xl shadow-2xl backdrop-blur-md"
+      >
+        <div
+          class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/20"
+        >
+          <i class="fa-solid fa-shield-halved text-3xl"></i>
+        </div>
+        <h2 class="text-2xl font-serif font-bold text-slate-100 mb-2">
+          Protección de Privacidad Activa
+        </h2>
+        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+          Las capturas de pantalla, grabaciones e inspección de contenido están
+          totalmente restringidas en esta galería para proteger los derechos de
+          imagen.
+        </p>
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-gold-500/10 border border-gold-500/30 rounded-full text-gold-400 text-xs font-semibold"
+        >
+          <i class="fa-solid fa-lock"></i> Contenido Protegido por Contrato
+        </div>
+      </div>
+    </div>
+
+    <!-- Elementos Decorativos Flotantes SVG de Fondo -->
+    <div
+      class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-20"
+    >
+      <svg
+        class="absolute top-[8%] left-[3%] w-32 h-32 text-sky-400 float-bg-icon-1"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4.13C5 19.45 8.13 21 12 21s7-1.55 7-3.69v-4.13l-7 3.82-7-3.82z"
+        />
+      </svg>
+      <svg
+        class="absolute top-[18%] right-[5%] w-40 h-40 text-sky-300 float-bg-icon-2"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 8L4.24 7 12 3.48 19.76 7 12 10zm-7 3.32v3.96C5 19.25 8.13 20.8 12 20.8s7-1.55 7-3.52v-3.96l-7 3.52-7-3.52z"
+        />
+      </svg>
+      <svg
+        class="absolute bottom-[20%] left-[5%] w-36 h-36 text-sky-300 float-bg-icon-3"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4.13C5 19.45 8.13 21 12 21s7-1.55 7-3.69v-4.13l-7 3.82-7-3.82z"
+        />
+      </svg>
+      <svg
+        class="absolute bottom-[8%] right-[8%] w-48 h-48 text-sky-400 float-bg-icon-1"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm0 8L4.24 7 12 3.48 19.76 7 12 10zm-7 3.32v3.96C5 19.25 8.13 20.8 12 20.8s7-1.55 7-3.52v-3.96l-7 3.52-7-3.52z"
+        />
+      </svg>
+    </div>
+
+    <!-- Barra superior de estado -->
+    <div
+      class="relative z-10 bg-navy-900/95 text-slate-200 text-xs py-2 px-4 shadow-sm backdrop-blur-md border-b border-navy-800"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2"
+      >
+        <div class="flex items-center gap-2 text-gold-300">
+          <span
+            class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+          ></span>
+          <span class="font-medium text-slate-200"
+            >Sistema Anti-Captura:
+            <strong class="text-emerald-300">ACTIVADO</strong></span
+          >
+        </div>
+        <div class="text-slate-300 text-xs flex items-center gap-4">
+          <span
+            ><i class="fa-solid fa-graduation-cap mr-1 text-gold-400"></i> Misa
+            y Acto de 6to Grado Madre Isabel</span
+          >
+          <a
+            href="#"
+            onclick="
+              openGeneralInfoWhatsApp();
+              return false;
+            "
+            class="text-emerald-400 hover:underline font-semibold flex items-center gap-1"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Contacto Directo: 0424 153
+            9345
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Encabezado principal -->
+    <header
+      class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-sky-100/80 shadow-xs"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-navy-900 to-navy-800 flex items-center justify-center text-gold-400 font-serif font-bold text-2xl shadow-md border border-navy-800"
+            >
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h1
+                class="text-xl sm:text-2xl font-serif font-extrabold navy-gradient-text tracking-wide flex items-center gap-2"
+              >
+                PROMOCIÓN 6to GRADO 2023
+              </h1>
+              <p
+                class="text-xs text-slate-500 font-medium flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-user-graduate text-sky-600"></i> Colegio
+                Madre Isabel - "Forjando el Futuro"
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <!-- Buscador -->
+            <div class="relative flex-1 sm:w-64">
+              <i
+                class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+              ></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar foto por número..."
+                class="w-full bg-white/90 border border-sky-200/80 rounded-xl pl-10 pr-4 py-2 text-sm text-navy-900 placeholder-slate-400 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 shadow-sm transition-all"
+              />
+            </div>
+
+            <!-- Botón Contactar Información -->
+            <button
+              onclick="openGeneralInfoWhatsApp()"
+              class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl flex items-center gap-2 text-sm font-semibold transition-all shadow-md"
+            >
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span class="hidden lg:inline">Contacto Directo</span>
+            </button>
+
+            <!-- Botón Carrito en Header -->
+            <button
+              id="headerCartBtn"
+              class="relative bg-navy-900 hover:bg-navy-800 text-gold-300 border border-gold-500/30 px-4 py-2 rounded-xl flex items-center gap-2 text-sm font-semibold transition-all shadow-md"
+            >
+              <i class="fa-solid fa-cart-shopping text-base text-gold-400"></i>
+              <span class="hidden sm:inline">Pedido</span>
+              <span
+                id="cartHeaderBadge"
+                class="bg-gold-500 text-navy-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center ml-0.5"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full"
+    >
+      <!-- Banner de Precios y Promoción de Descuento -->
+      <section
+        class="relative rounded-3xl overflow-hidden bg-white/80 border border-sky-200/80 p-6 sm:p-8 mb-8 text-left shadow-sm backdrop-blur-md"
+      >
+        <div
+          class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
+        >
+          <div class="max-w-2xl">
+            <div class="flex flex-wrap items-center gap-2 mb-3">
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sky-100 text-sky-900 border border-sky-300"
+              >
+                <i class="fa-solid fa-image text-sky-600"></i> Tamaño Postal 5 x
+                7 Pulgadas
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300"
+              >
+                <i class="fa-solid fa-tag text-amber-600"></i> $15 USD por Foto
+              </span>
+            </div>
+            <h2
+              class="text-2xl sm:text-3xl font-serif font-extrabold text-navy-900 mb-2"
+            >
+              Solicita tus Impresiones de
+              <span class="gold-gradient-text">Grado - Madre Isabel</span>
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Selecciona tus fotografías preferidas. Puedes solicitar múltiples
+              copias de la misma foto o elegir diferentes números de la galería.
+            </p>
+
+            <!-- Enlace / Botón para cualquier otra información -->
+            <button
+              onclick="openGeneralInfoWhatsApp()"
+              class="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-2xs"
+            >
+              <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+              <span
+                >¿Tienes dudas o necesitas otra información? Contáctanos por
+                WhatsApp</span
+              >
+            </button>
+          </div>
+
+          <!-- Tarjeta de Promoción Descuento -->
+          <div
+            class="bg-gradient-to-br from-navy-900 to-navy-950 text-white p-4 sm:p-5 rounded-2xl border border-gold-500/40 shadow-lg w-full lg:w-auto min-w-[300px]"
+          >
+            <div class="flex items-center gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold border border-gold-500/30"
+              >
+                %
+              </div>
+              <div>
+                <span
+                  class="text-xs text-gold-400 uppercase font-serif font-bold tracking-wider"
+                  >¡OFERTA ESPECIAL!</span
+                >
+                <h4 class="text-base font-bold text-white">40% DE DESCUENTO</h4>
+              </div>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Pide <strong>más de 2 impresiones</strong> (3 o más copias en
+              total) y obtén un <strong>40% de descuento</strong> automático
+              sobre tu pedido total.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grilla de Fotos -->
+      <section>
+        <div
+          id="galleryGrid"
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4"
+        >
+          <!-- Generado dinámicamente por JS -->
+        </div>
+
+        <div
+          id="noResults"
+          class="hidden text-center py-16 bg-white/70 rounded-3xl border border-sky-100 my-6 shadow-sm"
+        >
+          <div
+            class="w-16 h-16 bg-sky-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-200 text-sky-600"
+          >
+            <i class="fa-solid fa-folder-open text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-navy-900 mb-1">
+            No se encontraron fotografías
+          </h3>
+          <p class="text-sm text-slate-500">
+            Intenta buscar con otro término o número de foto.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Contenedor de Botones Flotantes (WhatsApp + Carrito) -->
+    <div
+      class="fixed bottom-6 right-6 z-40 flex flex-col sm:flex-row items-end sm:items-center gap-3"
+    >
+      <!-- Botón Flotante Directo de WhatsApp para consultas -->
+      <button
+        onclick="openGeneralInfoWhatsApp()"
+        title="Contacto directo por WhatsApp para cualquier otra información"
+        class="bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 sm:p-4 rounded-full shadow-2xl border-2 border-white flex items-center justify-center gap-2.5 transition-all transform hover:scale-110 active:scale-95 group"
+      >
+        <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+        <span
+          class="font-bold text-xs pr-1 hidden group-hover:inline transition-all duration-300"
+          >Información Directa</span
+        >
+      </button>
+
+      <!-- Botón Flotante de Carrito -->
+      <button
+        id="floatingCartBtn"
+        class="bg-navy-900 hover:bg-navy-800 text-white p-3.5 sm:p-4 rounded-full shadow-2xl border-2 border-gold-400 flex items-center justify-center gap-3 transition-all transform hover:scale-105 active:scale-95 group"
+      >
+        <div class="relative">
+          <i class="fa-solid fa-cart-shopping text-xl text-gold-400"></i>
+          <span
+            id="floatingCartBadge"
+            class="absolute -top-3 -right-3 bg-red-600 text-white font-extrabold text-xs w-6 h-6 rounded-full flex items-center justify-center border-2 border-navy-900"
+            >0</span
+          >
+        </div>
+        <span
+          class="font-serif font-bold text-sm pr-1 text-gold-300 hidden md:inline"
+          >Ver Pedido</span
+        >
+      </button>
+    </div>
+
+    <!-- Modal Lightbox Ampliación -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-50 hidden bg-navy-950/95 backdrop-blur-xl flex items-center justify-center p-4"
+    >
+      <button
+        id="closeLightbox"
+        class="absolute top-4 right-4 z-50 w-11 h-11 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full flex items-center justify-center transition-all"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </button>
+
+      <button
+        id="prevBtn"
+        class="absolute left-4 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full flex items-center justify-center transition-all hover:scale-105"
+      >
+        <i class="fa-solid fa-chevron-left text-lg"></i>
+      </button>
+
+      <button
+        id="nextBtn"
+        class="absolute right-4 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full flex items-center justify-center transition-all hover:scale-105"
+      >
+        <i class="fa-solid fa-chevron-right text-lg"></i>
+      </button>
+
+      <div
+        class="relative w-full h-full max-w-5xl max-h-[90vh] flex flex-col items-center justify-center"
+      >
+        <div
+          class="relative overflow-hidden rounded-2xl shadow-2xl border border-slate-700 bg-slate-950 max-h-[75vh] flex items-center justify-center"
+        >
+          <img
+            id="lightboxImg"
+            src=""
+            alt="Vista ampliada"
+            class="max-h-[70vh] w-auto object-contain select-none"
+          />
+
+          <!-- Overlay Marca de Agua -->
+          <div
+            class="absolute inset-0 pointer-events-none flex flex-col justify-between p-6 opacity-45 select-none"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-xs font-serif font-bold text-white tracking-widest uppercase bg-black/50 px-3 py-1 rounded border border-white/10 flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-graduation-cap text-gold-400"></i> GRADO -
+                MADRE ISABEL
+              </span>
+              <span
+                class="text-xs font-serif font-bold text-white tracking-widest uppercase bg-black/50 px-3 py-1 rounded border border-white/10 flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-graduation-cap text-gold-400"></i> GRADO -
+                MADRE ISABEL
+              </span>
+            </div>
+            <div class="text-center">
+              <p
+                class="text-xl sm:text-3xl font-serif font-extrabold text-white/70 rotate-[-15deg] tracking-widest uppercase drop-shadow-md flex items-center justify-center gap-3"
+              >
+                <i class="fa-solid fa-graduation-cap text-gold-400/80"></i>
+                GRADO - MADRE ISABEL
+              </p>
+            </div>
+            <div class="flex justify-between items-end">
+              <span class="text-xs text-white/80 bg-black/40 px-2 py-1 rounded"
+                >ID: <span id="lightboxId">000</span></span
+              >
+              <span
+                class="text-xs font-serif font-bold text-white tracking-widest uppercase bg-black/50 px-3 py-1 rounded border border-white/10 flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-graduation-cap text-gold-400"></i> GRADO -
+                MADRE ISABEL
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4 w-full max-w-xl bg-navy-900/90 border border-slate-700 p-4 rounded-2xl backdrop-blur-md"
+        >
+          <div>
+            <h4
+              id="lightboxTitle"
+              class="text-base font-serif font-semibold text-slate-100"
+            ></h4>
+            <p class="text-xs text-slate-400">
+              Impresión Tamaño Postal 5 x 7" ($15 USD)
+            </p>
+          </div>
+
+          <div id="lightboxCartControls" class="flex items-center gap-2">
+            <!-- Controles de carrito dentro de Lightbox insertados por JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Carrito de Compras / Checkout -->
+    <div
+      id="cartModal"
+      class="fixed inset-0 z-50 hidden bg-navy-950/80 backdrop-blur-md flex items-center justify-center p-4"
+    >
+      <div
+        class="bg-white rounded-3xl shadow-2xl border border-sky-100 max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-fade-in"
+      >
+        <!-- Encabezado Modal -->
+        <div
+          class="bg-navy-900 text-white p-5 px-6 flex justify-between items-center border-b border-navy-800"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center border border-gold-500/30"
+            >
+              <i class="fa-solid fa-cart-shopping text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg text-white">
+                Tu Pedido de Impresiones Misa y Acto Madre Isabel 6to
+              </h3>
+              <p class="text-xs text-slate-300">
+                Formato Postal 5 x 7" - Grado - Madre Isabel
+              </p>
+            </div>
+          </div>
+          <button
+            id="closeCartBtn"
+            class="text-slate-400 hover:text-white text-xl p-2 transition-colors"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Contenido Modal -->
+        <div class="p-6 overflow-y-auto flex-grow space-y-6">
+          <!-- Lista de ítems -->
+          <div>
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-list-check text-sky-600"></i> Fotos
+              Seleccionadas
+            </h4>
+            <div id="cartItemsList" class="space-y-3">
+              <!-- Generado dinámicamente -->
+            </div>
+          </div>
+
+          <!-- Resumen de Costos & Descuento -->
+          <div
+            class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2"
+          >
+            <div class="flex justify-between text-sm text-slate-600">
+              <span>Total de Impresiones:</span>
+              <strong id="cartTotalCopies" class="text-navy-900"
+                >0 copias</strong
+              >
+            </div>
+            <div class="flex justify-between text-sm text-slate-600">
+              <span>Subtotal ($15 c/u):</span>
+              <span id="cartSubtotal" class="font-semibold text-navy-900"
+                >$0.00 USD</span
+              >
+            </div>
+
+            <div
+              id="cartDiscountRow"
+              class="flex justify-between text-sm text-emerald-600 font-semibold bg-emerald-50 p-2 rounded-xl border border-emerald-200"
+            >
+              <span class="flex items-center gap-1"
+                ><i class="fa-solid fa-circle-check"></i> Descuento Especial
+                (40%):</span
+              >
+              <span id="cartDiscountAmount">-$0.00 USD</span>
+            </div>
+
+            <div
+              id="discountInfoMessage"
+              class="text-xs text-amber-700 bg-amber-50 p-2 rounded-xl border border-amber-200 flex items-center gap-2"
+            >
+              <i class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
+              <span
+                >¡Agrega 3 impresiones o más para recibir automáticamente un
+                <strong>40% de descuento</strong>!</span
+              >
+            </div>
+
+            <div
+              class="border-t border-slate-200 pt-2 mt-2 flex justify-between items-center"
+            >
+              <span class="font-serif font-bold text-navy-900 text-base"
+                >Total a Pagar:</span
+              >
+              <span
+                id="cartFinalTotal"
+                class="font-serif font-extrabold text-2xl text-navy-900 gold-gradient-text"
+                >$0.00 USD</span
+              >
+            </div>
+          </div>
+
+          <!-- Formulario de Datos Obligatorios -->
+          <form id="orderForm" class="space-y-3 pt-2">
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-user-pen text-sky-600"></i> Datos
+              Obligatorios del Solicitante
+            </h4>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 mb-1"
+                >Nombre Completo *</label
+              >
+              <input
+                type="text"
+                id="clientName"
+                required
+                placeholder="Ej. María Pérez"
+                class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-sm text-navy-900 focus:outline-none focus:border-sky-500 focus:bg-white transition-all"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1"
+                  >Correo Electrónico *</label
+                >
+                <input
+                  type="email"
+                  id="clientEmail"
+                  required
+                  placeholder="ejemplo@correo.com"
+                  class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-sm text-navy-900 focus:outline-none focus:border-sky-500 focus:bg-white transition-all"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1"
+                  >Teléfono de Contacto *</label
+                >
+                <input
+                  type="tel"
+                  id="clientPhone"
+                  required
+                  placeholder="0414 123 4567"
+                  class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-sm text-navy-900 focus:outline-none focus:border-sky-500 focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Pie Modal / Botón WhatsApp -->
+        <div
+          class="bg-slate-100 p-4 px-6 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3"
+        >
+          <span class="text-xs text-slate-500 text-center sm:text-left">
+            <i class="fa-solid fa-lock text-emerald-600 mr-1"></i> Pedido
+            directo a WhatsApp: <strong>0424 153 9345</strong>
+          </span>
+          <button
+            id="sendWhatsAppBtn"
+            type="button"
+            class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl flex items-center justify-center gap-2.5 transition-all shadow-lg shadow-emerald-600/30"
+          >
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Confirmar Pedido por WhatsApp</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer
+      class="relative z-10 bg-navy-900 text-slate-300 border-t border-navy-800 mt-16 py-8"
+    >
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy-800 text-gold-400 mb-3 border border-navy-700"
+        >
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <p class="text-slate-300 text-sm mb-2 font-medium">
+          © 2026 Promoción de Grado Madre Isabel. Todos los derechos reservados.
+        </p>
+        <p class="text-slate-400 text-xs max-w-lg mx-auto leading-relaxed mb-4">
+          Las imágenes expuestas están sujetas a normas de privacidad y derechos
+          de autor. Se prohíbe estrictamente la captura de pantalla, descarga o
+          distribución sin autorización.
+        </p>
+        <button
+          onclick="openGeneralInfoWhatsApp()"
+          class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 underline"
+        >
+          <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp para más
+          información
+        </button>
+      </div>
+    </footer>
+
+    <!-- JavaScript del Sistema -->
+    <script>
+      const PHOTO_PRICE = 15; // Precio fijo por foto en USD
+      const WHATSAPP_NUMBER = "584241539345"; // Número de teléfono WhatsApp (+58 424 153 9345)
+
+      // Especifica aquí la cantidad total de fotos que tienes en la carpeta images
+      const TOTAL_FOTOS = 717;
+      const FORMATO_IMAGEN = "JPG";
+
+      const galleryData = Array.from({ length: TOTAL_FOTOS }, (_, index) => {
+        const num = index + 1;
+        const paddedNum = String(num).padStart(4, "0");
+        return {
+          id: paddedNum,
+          title: `Foto de Grado #${paddedNum}`,
+          url: `./acto/${paddedNum}.${FORMATO_IMAGEN}`,
+        };
+      });
+
+      // Estructura del Carrito: { [idFoto]: cantidadCopias }
+      let cartState = {};
+      let currentFilteredData = [...galleryData];
+      let currentImageIndex = 0;
+
+      // Referencias DOM
+      const galleryGrid = document.getElementById("galleryGrid");
+      const searchInput = document.getElementById("searchInput");
+      const noResults = document.getElementById("noResults");
+
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxTitle = document.getElementById("lightboxTitle");
+      const lightboxId = document.getElementById("lightboxId");
+      const lightboxCartControls = document.getElementById(
+        "lightboxCartControls",
+      );
+      const closeLightbox = document.getElementById("closeLightbox");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      // Carrito DOM
+      const cartModal = document.getElementById("cartModal");
+      const closeCartBtn = document.getElementById("closeCartBtn");
+      const headerCartBtn = document.getElementById("headerCartBtn");
+      const floatingCartBtn = document.getElementById("floatingCartBtn");
+      const cartHeaderBadge = document.getElementById("cartHeaderBadge");
+      const floatingCartBadge = document.getElementById("floatingCartBadge");
+      const cartItemsList = document.getElementById("cartItemsList");
+      const cartTotalCopies = document.getElementById("cartTotalCopies");
+      const cartSubtotal = document.getElementById("cartSubtotal");
+      const cartDiscountRow = document.getElementById("cartDiscountRow");
+      const cartDiscountAmount = document.getElementById("cartDiscountAmount");
+      const discountInfoMessage = document.getElementById(
+        "discountInfoMessage",
+      );
+      const cartFinalTotal = document.getElementById("cartFinalTotal");
+      const sendWhatsAppBtn = document.getElementById("sendWhatsAppBtn");
+
+      // Formulario
+      const clientName = document.getElementById("clientName");
+      const clientEmail = document.getElementById("clientEmail");
+      const clientPhone = document.getElementById("clientPhone");
+
+      function initGallery() {
+        renderGallery(galleryData);
+        updateCartBadges();
+      }
+
+      // Contacto directo por WhatsApp para cualquier otra información
+      function openGeneralInfoWhatsApp() {
+        const message = `👋 ¡Hola! Me comunico desde la web de la *Galería de Grado Madre Isabel*. Quisiera solicitar información general / realizar una consulta.`;
+        const encodedMessage = encodeURIComponent(message);
+        window.open(
+          `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`,
+          "_blank",
+        );
+      }
+
+      function renderGallery(items) {
+        galleryGrid.innerHTML = "";
+
+        if (items.length === 0) {
+          noResults.classList.remove("hidden");
+        } else {
+          noResults.classList.add("hidden");
+          items.forEach((item, index) => {
+            const copies = cartState[item.id] || 0;
+            const card = document.createElement("div");
+            card.className =
+              "group relative bg-white/90 backdrop-blur-sm border border-sky-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-300 flex flex-col justify-between";
+
+            card.innerHTML = `
+                        <div class="cursor-pointer" onclick="openLightbox(${index})">
+                            <div class="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
+                                <img src="${item.url}" alt="${item.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                
+                                <div class="absolute inset-0 bg-navy-950/20 group-hover:bg-navy-950/10 transition-colors pointer-events-none flex items-center justify-center">
+                                    <span class="text-[10px] font-serif font-bold tracking-widest text-white/80 uppercase rotate-[-25deg] select-none border border-white/20 px-2.5 py-1 rounded bg-black/30 backdrop-blur-xs flex items-center gap-1">
+                                        <i class="fa-solid fa-graduation-cap text-gold-400"></i> GRADO MADRE ISABEL
+                                    </span>
+                                </div>
+
+                                <div class="absolute top-3 right-3 bg-navy-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold-400 border border-gold-500/30 flex items-center gap-1">
+                                    <i class="fa-solid fa-tag text-[9px]"></i> #${item.id}
+                                </div>
+                            </div>
+                            <div class="p-3 text-center bg-white/90">
+                                <h3 class="font-serif font-bold text-navy-900 group-hover:text-sky-600 transition-colors text-sm flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-user-graduate text-xs text-sky-500"></i> ${item.title}
+                                </h3>
+                                <p class="text-[11px] text-slate-500 mt-0.5">Postal 5x7" ($15 USD)</p>
+                            </div>
+                        </div>
+
+                        <!-- Controles de Pedido en la Tarjeta -->
+                        <div class="p-3 pt-0 bg-white/90 border-t border-slate-100">
+                            ${
+                              copies === 0
+                                ? `
+                                <button onclick="addToCart('${item.id}')" class="w-full bg-navy-900 hover:bg-navy-800 text-gold-300 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-gold-500/30 shadow-sm">
+                                    <i class="fa-solid fa-cart-plus text-gold-400"></i> Solicitar Impresión
+                                </button>
+                            `
+                                : `
+                                <div class="flex items-center justify-between bg-sky-50 border border-sky-200 rounded-xl p-1">
+                                    <button onclick="updateCartQuantity('${item.id}', ${copies - 1})" class="w-8 h-8 rounded-lg bg-white border border-sky-200 text-navy-900 font-bold flex items-center justify-center hover:bg-sky-100 text-xs">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <span class="font-bold text-xs text-navy-900">${copies} ${copies === 1 ? "copia" : "copias"}</span>
+                                    <button onclick="updateCartQuantity('${item.id}', ${copies + 1})" class="w-8 h-8 rounded-lg bg-white border border-sky-200 text-navy-900 font-bold flex items-center justify-center hover:bg-sky-100 text-xs">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            `
+                            }
+                        </div>
+                    `;
+
+            galleryGrid.appendChild(card);
+          });
+        }
+      }
+
+      function addToCart(photoId) {
+        cartState[photoId] = (cartState[photoId] || 0) + 1;
+        updateCartBadges();
+        renderGallery(currentFilteredData);
+        if (!lightbox.classList.contains("hidden")) {
+          updateLightboxCartControls();
+        }
+      }
+
+      function updateCartQuantity(photoId, newQty) {
+        if (newQty <= 0) {
+          delete cartState[photoId];
+        } else {
+          cartState[photoId] = newQty;
+        }
+        updateCartBadges();
+        renderGallery(currentFilteredData);
+        renderCartModalItems();
+        if (!lightbox.classList.contains("hidden")) {
+          updateLightboxCartControls();
+        }
+      }
+
+      function getTotalCopies() {
+        return Object.values(cartState).reduce((acc, count) => acc + count, 0);
+      }
+
+      function updateCartBadges() {
+        const total = getTotalCopies();
+        cartHeaderBadge.textContent = total;
+        floatingCartBadge.textContent = total;
+      }
+
+      function openCartModal() {
+        renderCartModalItems();
+        cartModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeCartModal() {
+        cartModal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function renderCartModalItems() {
+        cartItemsList.innerHTML = "";
+        const totalCopies = getTotalCopies();
+
+        if (totalCopies === 0) {
+          cartItemsList.innerHTML = `
+                    <div class="text-center py-8 text-slate-400">
+                        <i class="fa-solid fa-cart-flatbed text-3xl mb-2 text-slate-300"></i>
+                        <p class="text-sm">Tu carrito está vacío. Agrega impresiones de la galería.</p>
+                    </div>
+                `;
+          cartTotalCopies.textContent = "0 copias";
+          cartSubtotal.textContent = "$0.00 USD";
+          cartDiscountRow.classList.add("hidden");
+          discountInfoMessage.classList.remove("hidden");
+          cartFinalTotal.textContent = "$0.00 USD";
+          return;
+        }
+
+        // Renderizar items
+        Object.entries(cartState).forEach(([id, qty]) => {
+          const photo = galleryData.find((p) => p.id === id);
+          if (!photo) return;
+
+          const itemRow = document.createElement("div");
+          itemRow.className =
+            "flex items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-2xs";
+          itemRow.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <img src="${photo.url}" alt="${photo.title}" class="w-12 h-12 object-cover rounded-xl border border-slate-200">
+                        <div>
+                            <h5 class="text-xs font-bold text-navy-900">${photo.title}</h5>
+                            <p class="text-[11px] text-slate-500">5x7" Postal - $15 c/u</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl border border-slate-200">
+                            <button onclick="updateCartQuantity('${id}', ${qty - 1})" class="w-6 h-6 rounded-lg bg-white text-navy-900 font-bold text-xs flex items-center justify-center hover:bg-slate-200">-</button>
+                            <span class="text-xs font-bold px-1">${qty}</span>
+                            <button onclick="updateCartQuantity('${id}', ${qty + 1})" class="w-6 h-6 rounded-lg bg-white text-navy-900 font-bold text-xs flex items-center justify-center hover:bg-slate-200">+</button>
+                        </div>
+                        <span class="text-xs font-bold text-navy-900 w-14 text-right">$${qty * PHOTO_PRICE}</span>
+                    </div>
+                `;
+          cartItemsList.appendChild(itemRow);
+        });
+
+        // Cálculos
+        const subtotal = totalCopies * PHOTO_PRICE;
+        let discount = 0;
+
+        if (totalCopies > 2) {
+          discount = subtotal * 0.4; // 40% de descuento si pide más de 2 copias
+          cartDiscountRow.classList.remove("hidden");
+          discountInfoMessage.classList.add("hidden");
+        } else {
+          cartDiscountRow.classList.add("hidden");
+          discountInfoMessage.classList.remove("hidden");
+        }
+
+        const finalTotal = subtotal - discount;
+
+        cartTotalCopies.textContent = `${totalCopies} ${totalCopies === 1 ? "copia" : "copias"}`;
+        cartSubtotal.textContent = `$${subtotal.toFixed(2)} USD`;
+        cartDiscountAmount.textContent = `-$${discount.toFixed(2)} USD`;
+        cartFinalTotal.textContent = `$${finalTotal.toFixed(2)} USD`;
+      }
+
+      function sendOrderToWhatsApp() {
+        const totalCopies = getTotalCopies();
+
+        if (totalCopies === 0) {
+          alert(
+            "Por favor selecciona al menos una foto para realizar el pedido.",
+          );
+          return;
+        }
+
+        // Validaciones de Formulario
+        const name = clientName.value.trim();
+        const email = clientEmail.value.trim();
+        const phone = clientPhone.value.trim();
+
+        if (!name || !email || !phone) {
+          alert(
+            "Por favor completa todos los campos obligatorios (Nombre, Correo y Teléfono).",
+          );
+          return;
+        }
+
+        const subtotal = totalCopies * PHOTO_PRICE;
+        const hasDiscount = totalCopies > 2;
+        const discount = hasDiscount ? subtotal * 0.4 : 0;
+        const finalTotal = subtotal - discount;
+
+        // Construcción del mensaje para WhatsApp
+        let message = `🎓 *NUEVO PEDIDO DE IMPRESIONES - GRADO MADRE ISABEL*\n\n`;
+        message += `👤 *DATOS DEL CLIENTE:*\n`;
+        message += `• *Nombre:* ${name}\n`;
+        message += `• *Correo:* ${email}\n`;
+        message += `• *Teléfono:* ${phone}\n\n`;
+
+        message += `🖼️ *DETALLE DE FOTOGRAFÍAS (Tamaño Postal 5x7"):*\n`;
+        Object.entries(cartState).forEach(([id, qty]) => {
+          message += `• *Foto #${id}:* ${qty} ${qty === 1 ? "copia" : "copias"}\n`;
+        });
+
+        message += `\n📊 *RESUMEN DE PAGO:*\n`;
+        message += `• Total Impresiones: ${totalCopies} copias\n`;
+        message += `• Subtotal: $${subtotal.toFixed(2)} USD\n`;
+        if (hasDiscount) {
+          message += `• Descuento Aplicado (40%): -$${discount.toFixed(2)} USD\n`;
+        }
+        message += `• *TOTAL A PAGAR: $${finalTotal.toFixed(2)} USD*\n\n`;
+        message += `Quedo atento a las instrucciones para completar el pago y envío. ¡Muchas gracias!`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+
+      // Event listeners de Carrito
+      headerCartBtn.addEventListener("click", openCartModal);
+      floatingCartBtn.addEventListener("click", openCartModal);
+      closeCartBtn.addEventListener("click", closeCartModal);
+      sendWhatsAppBtn.addEventListener("click", sendOrderToWhatsApp);
+
+      cartModal.addEventListener("click", (e) => {
+        if (e.target === cartModal) closeCartModal();
+      });
+
+      // Buscador
+      searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        currentFilteredData = galleryData.filter((item) => {
+          return (
+            item.title.toLowerCase().includes(searchTerm) ||
+            item.id.includes(searchTerm)
+          );
+        });
+        renderGallery(currentFilteredData);
+      });
+
+      function openLightbox(index) {
+        currentImageIndex = index;
+        updateLightboxContent();
+        lightbox.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightboxModal() {
+        lightbox.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      function updateLightboxContent() {
+        const item = currentFilteredData[currentImageIndex];
+        if (!item) return;
+
+        lightboxImg.src = item.url;
+        lightboxTitle.textContent = item.title;
+        lightboxId.textContent = item.id;
+        updateLightboxCartControls();
+      }
+
+      function updateLightboxCartControls() {
+        const item = currentFilteredData[currentImageIndex];
+        if (!item) return;
+
+        const copies = cartState[item.id] || 0;
+        if (copies === 0) {
+          lightboxCartControls.innerHTML = `
+                    <button onclick="addToCart('${item.id}')" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-4 py-2 rounded-xl text-xs transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i> Solicitar Copia ($15 USD)
+                    </button>
+                `;
+        } else {
+          lightboxCartControls.innerHTML = `
+                    <div class="flex items-center gap-2 bg-slate-800 p-1.5 rounded-xl border border-slate-700">
+                        <button onclick="updateCartQuantity('${item.id}', ${copies - 1})" class="w-8 h-8 rounded-lg bg-slate-700 text-white font-bold text-xs flex items-center justify-center hover:bg-slate-600">-</button>
+                        <span class="text-xs font-bold text-slate-100 px-2">${copies} ${copies === 1 ? "copia" : "copias"}</span>
+                        <button onclick="updateCartQuantity('${item.id}', ${copies + 1})" class="w-8 h-8 rounded-lg bg-slate-700 text-white font-bold text-xs flex items-center justify-center hover:bg-slate-600">+</button>
+                    </div>
+                `;
+        }
+      }
+
+      closeLightbox.addEventListener("click", closeLightboxModal);
+
+      prevBtn.addEventListener("click", () => {
+        currentImageIndex =
+          (currentImageIndex - 1 + currentFilteredData.length) %
+          currentFilteredData.length;
+        updateLightboxContent();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        currentImageIndex =
+          (currentImageIndex + 1) % currentFilteredData.length;
+        updateLightboxContent();
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightboxModal();
+      });
+
+      // --- SISTEMA ANTI-CAPTURAS (PANTALLA NEGRA) ---
+      const blackoutOverlay = document.getElementById("blackout-overlay");
+
+      function triggerBlackout(duration = 3000) {
+        blackoutOverlay.style.display = "flex";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(
+            "Contenido Protegido - Galería de Grado Madre Isabel",
+          );
+        }
+        if (duration > 0) {
+          setTimeout(() => {
+            blackoutOverlay.style.display = "none";
+          }, duration);
+        }
+      }
+
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        triggerBlackout(1500);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "PrintScreen" || e.keyCode === 44) {
+          e.preventDefault();
+          triggerBlackout(4000);
+          return false;
+        }
+
+        if (e.ctrlKey || e.metaKey) {
+          const key = e.key.toLowerCase();
+          if (
+            key === "p" ||
+            key === "s" ||
+            key === "u" ||
+            (e.shiftKey &&
+              (key === "i" || key === "j" || key === "c" || key === "s"))
+          ) {
+            e.preventDefault();
+            triggerBlackout(3000);
+            return false;
+          }
+        }
+
+        if (e.key === "F12") {
+          e.preventDefault();
+          triggerBlackout(3000);
+          return false;
+        }
+
+        if (!lightbox.classList.contains("hidden")) {
+          if (e.key === "ArrowLeft") prevBtn.click();
+          if (e.key === "ArrowRight") nextBtn.click();
+          if (e.key === "Escape") closeLightboxModal();
+        }
+      });
+
+      window.addEventListener("blur", () => {
+        blackoutOverlay.style.display = "flex";
+      });
+
+      window.addEventListener("focus", () => {
+        setTimeout(() => {
+          blackoutOverlay.style.display = "none";
+        }, 500);
+      });
+
+      document.addEventListener("dragstart", (e) => e.preventDefault());
+
+      window.onload = function () {
+        initGallery();
+      };
+    </script>
+  </body>
+</html>
